@@ -163,6 +163,7 @@ class CipherSonicApp(QMainWindow, FORM_CLASS):
         new_sentence_features, new_speaker_features = extract_features(new_recording_path)
 
         predicted_sentence = self.model_sentence.predict_proba([new_sentence_features])
+        print(predicted_sentence)
         predicted_speaker = self.model_speaker.predict_proba([new_speaker_features])
 
         return predicted_sentence, predicted_speaker
